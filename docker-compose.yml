@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=your_project_name.settings
+      - DATABASE_URL=postgresql://postgres:password@db:5432/game_db
+      - SECRET_KEY=your_secret_key_here
+      - BOT_TOKEN=your_telegram_bot_token
+      - DEBUG=0
+      - ALLOWED_HOSTS=your_domain.com,localhost,127.0.0.1
+    depends_on:
+      - db
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+
+  db:
+    image: postgres:13
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=game_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+
+  nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - static_volume:/app/static
+      - media_volume:/app/media
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    depends_on:
+      - web
+
+  backup:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups
+    environment:
+      - POSTGRES_DB=game_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    command: |
+      bash -c 'while true; do
+        pg_dump -h db -U postgres game_db > /backups/backup_$$(date +%Y%m%d_%H%M%S).sql
+        sleep 86400
+      done'
+    depends_on:
+      - db
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+  grafana_data: 
