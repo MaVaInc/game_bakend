@@ -82,7 +82,14 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email ваш@email.com -d anidapha.us --agree-tos
+    command: >-
+      certonly --webroot 
+      --webroot-path=/var/www/certbot 
+      --email your@email.com  # замените на ваш email
+      --agree-tos 
+      --no-eff-email 
+      -d anidapha.us 
+      --force-renewal
 
 volumes:
   postgres_data:
