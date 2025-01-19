@@ -7,10 +7,10 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DJANGO_SETTINGS_MODULE=your_project_name.settings
+      - DJANGO_SETTINGS_MODULE=game_backend.settings
       - DATABASE_URL=postgresql://postgres:password@db:5432/game_db
-      - SECRET_KEY=your_secret_key_here
-      - BOT_TOKEN=your_telegram_bot_token
+      - SECRET_KEY=7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
+      - BOT_TOKEN=7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
       - DEBUG=0
       - ALLOWED_HOSTS=ваш_реальный_домен.com,localhost,127.0.0.1
     depends_on:
