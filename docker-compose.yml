@@ -12,7 +12,7 @@ services:
       - SECRET_KEY=your_secret_key_here
       - BOT_TOKEN=your_telegram_bot_token
       - DEBUG=0
-      - ALLOWED_HOSTS=your_domain.com,localhost,127.0.0.1
+      - ALLOWED_HOSTS=ваш_реальный_домен.com,localhost,127.0.0.1
     depends_on:
       - db
     volumes:
