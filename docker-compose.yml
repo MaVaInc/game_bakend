@@ -16,8 +16,8 @@ services:
     depends_on:
       - db
     volumes:
-      - static_volume:/app/static
-      - media_volume:/app/media
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:8000
 
   db:
     image: postgres:13
