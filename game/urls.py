@@ -13,13 +13,14 @@ from .views import (
     WaterfallActivateView,
     WaterfallBoostView,
     EnhancePlayerView,
+    UserRegistrationView,
+    UserLoginView,
 )
 from .views_auth import (
     auth_view,
     set_username,
     get_player_state
 )
-from .views import debug_view
 
 urlpatterns = [
     # Авторизация и профиль
@@ -35,5 +36,8 @@ urlpatterns = [
     path('waterfall/activate/', WaterfallActivateView.as_view(), name='waterfall-activate'),
     path('waterfall/boost/', WaterfallBoostView.as_view(), name='waterfall-boost'),
     path('enhance/', EnhancePlayerView.as_view(), name='enhance-player'),
-    path('debug/', debug_view, name='debug'),
+
+    # Регистрация и авторизация
+    path('register/', UserRegistrationView.as_view(), name='register'),
+    path('login/', UserLoginView.as_view(), name='login'),
 ]
