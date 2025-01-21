@@ -41,8 +41,7 @@ def auth_view(request):
 
     if not init_data:
         return JsonResponse({'success': False, 'message': 'No initData provided'}, status=400)
-    else:
-        return JsonResponse({'success': False, 'message': init_data}, status=4002)
+
 
     if validate_init_data(init_data, bot_token):
         user_info_dict = urllib.parse.parse_qs(init_data)
