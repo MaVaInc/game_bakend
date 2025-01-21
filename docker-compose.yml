@@ -4,18 +4,20 @@ services:
   web:
     build: .
     restart: always
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
     environment:
       - DJANGO_SETTINGS_MODULE=game_backend.settings
-      - ALLOWED_HOSTS=anidapha.us,localhost,127.0.0.1
+      - DATABASE_URL=postgresql://postgres:password@db:5432/game_db
+      - SECRET_KEY=7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
+      - BOT_TOKEN=7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
+      - DEBUG=0
+      - ALLOWED_HOSTS=ваш_реальный_домен.com,localhost,127.0.0.1
     depends_on:
       - db
     volumes:
       - .:/app
     command: python manage.py runserver 0.0.0.0:8000
-    networks:
-      - app_network
 
   db:
     image: postgres:13
@@ -35,23 +37,12 @@ services:
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - static_volume:/app/static
+      - media_volume:/app/media
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
     depends_on:
       - web
-    networks:
-      - app_network
-
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    depends_on:
-      - nginx
-    networks:
-      - app_network
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
   backup:
     image: postgres:13
@@ -86,12 +77,22 @@ services:
     depends_on:
       - prometheus
 
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: >-
+      certonly --webroot 
+      --webroot-path=/var/www/certbot 
+      --email udes0308@gmail.com 
+      --agree-tos 
+      --no-eff-email 
+      -d anidapha.us 
+      --staging
+
 volumes:
   postgres_data:
   static_volume:
   media_volume:
-  grafana_data:
-
-networks:
-  app_network:
-    driver: bridge 
+  grafana_data: 
