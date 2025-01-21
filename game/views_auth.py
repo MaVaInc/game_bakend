@@ -34,7 +34,7 @@ def auth_view(request):
     возвращаем registered=False и предлагаем установить username.
     Иначе возвращаем registered=True и основные данные о пользователе и его состоянии.
     """
-    init_data = request.data.get('initData')
+    init_data = request.data
 
     # Замените на свой реальный bot_token
     bot_token = '7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI'
