@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import status
 from django.conf import settings
 from rest_framework.throttling import UserRateThrottle
+from .serializers import UserSerializer
 
 from .models import PlayerState
 from .services import (
@@ -104,3 +105,16 @@ class EnhancePlayerView(APIView):
         player_state = get_object_or_404(PlayerState, user=request.user)
         success, message = enhance_player(player_state)
         return Response({"success": success, "message": message})
+
+class UserRegistrationView(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class UserLoginView(APIView):
+    def post(self, request):
+        # Ваша логика логина
+        pass
