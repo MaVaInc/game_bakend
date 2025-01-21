@@ -37,10 +37,12 @@ def auth_view(request):
     init_data = request.data.get('initData')
 
     # Замените на свой реальный bot_token
-    bot_token = 'REPLACE_WITH_YOUR_BOT_TOKEN'
+    bot_token = '7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI'
 
     if not init_data:
         return JsonResponse({'success': False, 'message': 'No initData provided'}, status=400)
+    else:
+        return JsonResponse({'success': False, 'message': 'messade test1'}, status=4002)
 
     if validate_init_data(init_data, bot_token):
         user_info_dict = urllib.parse.parse_qs(init_data)
