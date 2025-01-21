@@ -1,7 +1,7 @@
 #!/bin/bash
 # Создайте файл update.sh на сервере
 
-cd /var/www/game
+cd /var/www/game/game_backend
 
 # Получаем изменения из git
 git pull

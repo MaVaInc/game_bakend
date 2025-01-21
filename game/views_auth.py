@@ -34,7 +34,7 @@ def auth_view(request):
     возвращаем registered=False и предлагаем установить username.
     Иначе возвращаем registered=True и основные данные о пользователе и его состоянии.
     """
-    init_data = request.data
+    init_data = request.data.get('initData')
 
     # Замените на свой реальный bot_token
     bot_token = '7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI'
@@ -42,7 +42,7 @@ def auth_view(request):
     if not init_data:
         return JsonResponse({'success': False, 'message': 'No initData provided'}, status=400)
     else:
-        return JsonResponse({'success': False, 'message': 'messade test1'}, status=4002)
+        return JsonResponse({'success': False, 'message': init_data}, status=4002)
 
     if validate_init_data(init_data, bot_token):
         user_info_dict = urllib.parse.parse_qs(init_data)
