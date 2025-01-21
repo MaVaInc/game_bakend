@@ -89,7 +89,7 @@ services:
       --agree-tos 
       --no-eff-email 
       -d anidapha.us 
-      --staging
+      --force-renewal
 
 volumes:
   postgres_data:
