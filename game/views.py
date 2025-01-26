@@ -2,12 +2,16 @@
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from django.conf import settings
 from rest_framework.throttling import UserRateThrottle
 from .serializers import UserSerializer
+from django.http import JsonResponse
+import json
+from django.db import transaction
+from django.db.models import F
 
 from .models import PlayerState
 from .services import (
@@ -27,13 +31,19 @@ class AltarActivateView(APIView):
     permission_classes = [IsAuthenticated]
     throttle_classes = [GameActionThrottle]
 
+    @transaction.atomic
     def post(self, request):
         try:
-            player_state = get_object_or_404(PlayerState, user=request.user)
+            player_state = PlayerState.objects.select_for_update().get(user=request.user)
             success, message = activate_altar(player_state)
             return Response(
                 {"success": success, "message": message},
                 status=status.HTTP_200_OK if success else status.HTTP_400_BAD_REQUEST
+            )
+        except PlayerState.DoesNotExist:
+            return Response(
+                {"success": False, "message": "Состояние игрока не найдено"},
+                status=status.HTTP_404_NOT_FOUND
             )
         except Exception as e:
             return Response(
@@ -54,19 +64,33 @@ class CampfireStartView(APIView):
 class GatherFoodView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @transaction.atomic
     def post(self, request):
-        player_state = get_object_or_404(PlayerState, user=request.user)
-        success, message = gather_food(player_state)
-        return Response({"success": success, "message": message})
+        try:
+            player_state = PlayerState.objects.select_for_update().get(user=request.user)
+            success, message = gather_food(player_state)
+            return Response({"success": success, "message": message})
+        except PlayerState.DoesNotExist:
+            return Response(
+                {"success": False, "message": "Состояние игрока не найдено"},
+                status=status.HTTP_404_NOT_FOUND
+            )
 
 
 class GatherWoodView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @transaction.atomic
     def post(self, request):
-        player_state = get_object_or_404(PlayerState, user=request.user)
-        success, message = gather_wood(player_state)
-        return Response({"success": success, "message": message})
+        try:
+            player_state = PlayerState.objects.select_for_update().get(user=request.user)
+            success, message = gather_wood(player_state)
+            return Response({"success": success, "message": message})
+        except PlayerState.DoesNotExist:
+            return Response(
+                {"success": False, "message": "Состояние игрока не найдено"},
+                status=status.HTTP_404_NOT_FOUND
+            )
 
 
 class WaterfallActivateView(APIView):
@@ -106,15 +130,3 @@ class EnhancePlayerView(APIView):
         success, message = enhance_player(player_state)
         return Response({"success": success, "message": message})
 
-class UserRegistrationView(APIView):
-    def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class UserLoginView(APIView):
-    def post(self, request):
-        # Ваша логика логина
-        pass
