@@ -5,13 +5,14 @@
 и выдачей JWT-токенов (refresh/access) при успешной авторизации.
 Все данные о пользователе и его состоянии (PlayerState) возвращаются в ответ.
 """
-
+import traceback
 import urllib.parse
 import json
 import secrets
 import hmac
 import hashlib
 import time
+from datetime import datetime
 
 from django.utils import timezone
 from django.http import JsonResponse
@@ -21,94 +22,75 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from .models import PlayerState, User  # Модель состояния игрока из приложения game
 
-
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def auth_view(request):
-    """
-    Принимает initData из Telegram MiniApp (request.data['initData']),
-    проверяет корректность хеша с помощью bot_token,
-    регистрирует/авторизует пользователя и выдает JWT-токены.
-
-    Если у пользователя ещё нет username (или он только что создан),
-    возвращаем registered=False и предлагаем установить username.
-    Иначе возвращаем registered=True и основные данные о пользователе и его состоянии.
-    """
+    logger.info("=== Starting auth_view ===")
+    logger.info(f"Request method: {request.method}")
+    logger.info(f"Request headers: {request.headers}")
+    logger.info(f"Request data: {request.data}")
+    
     init_data = request.data.get('initData')
-
-    # Замените на свой реальный bot_token
-    bot_token = '7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI'
+    bot_token = '8093000259:AAE_TCJK6gu7_MC0t4fiHdllZGZEBEugROQ'
 
     if not init_data:
-        return JsonResponse({'success': False, 'message': 'No initData provided'}, status=400)
+        logger.error("No initData provided")
+        return JsonResponse({
+            'success': False, 
+            'message': 'No initData provided'
+        }, status=400)
 
-
-    if validate_init_data(init_data, bot_token):
-        user_info_dict = urllib.parse.parse_qs(init_data)
-        # user (JSON-строка с полями id, first_name, last_name, username и т.д.)
-        try:
-            user_info = json.loads(user_info_dict['user'][0])
-        except (KeyError, json.JSONDecodeError):
-            return JsonResponse({
-                'success': False, 
-                'message': 'Некорректные данные пользователя'
-            }, status=400)
-        auth_date = int(user_info_dict['auth_date'][0])
-
-        # Добавьте проверку срока действия auth_date сразу после его получения
-        try:
-            if time.time() - auth_date > 86400:
+    try:
+        if validate_init_data(init_data, bot_token):
+            user_info_dict = urllib.parse.parse_qs(init_data)
+            try:
+                user_info = json.loads(user_info_dict['user'][0])
+                auth_date = int(user_info_dict['auth_date'][0])
+            except (KeyError, json.JSONDecodeError, ValueError) as e:
+                logger.error(f"Error parsing user info: {e}")
                 return JsonResponse({
                     'success': False,
-                    'message': 'Срок действия авторизации истек'
-                }, status=401)
-        except (KeyError, ValueError):
-            return JsonResponse({
-                'success': False,
-                'message': 'Некорректная дата авторизации'
-            }, status=400)
+                    'message': 'Invalid user info format'
+                }, status=400)
 
-        # auth_date в человекочитаемом формате (необязательно)
-        user_info['auth_date'] = timezone.datetime.fromtimestamp(auth_date).strftime('%Y-%m-%d %H:%M:%S')
+            telegram_id = user_info['id']
+            username = user_info.get('username', f"user_{telegram_id}")
 
-        # По Telegram ID определяем пользователя
-        telegram_id = user_info['id']
-        user, created = User.objects.get_or_create(
-            telegram_id=telegram_id,
-            defaults={
-                # При создании — генерируем какое-то временное имя,
-                # чтобы у пользователя было уникальное username в БД.
-                'username': f"user_{secrets.token_hex(3)}",
-                'first_name': user_info.get('first_name', ''),
-                'last_name': user_info.get('last_name', ''),
-                'photo_url': None,
-                'auth_date': auth_date,
-            }
-        )
+            # Получаем или создаем пользователя
+            user, created = User.objects.get_or_create(
+                telegram_id=telegram_id,
+                defaults={
+                    'username': username,
+                    'first_name': user_info.get('first_name', ''),
+                    'last_name': user_info.get('last_name', ''),
+                    'photo_url': user_info.get('photo_url'),
+                    'auth_date': auth_date,
+                }
+            )
 
-        # Если пользователь только что создан -> создаём PlayerState (если не создаётся сигналами)
-        if created:
-            PlayerState.objects.create(user=user)
+            # Обновляем данные пользователя
+            if not created:
+                user.auth_date = auth_date
+                if user.username.startswith("user_"):
+                    user.username = username
+                user.save()
 
-        # Проверяем, есть ли у пользователя полноценный username
-        if created or not user.username or user.username.startswith("user_"):
-            # Предлагаем установить желаемый username
-            return JsonResponse({
-                'success': True,
-                'registered': False,
-                'welcome_message': "Welcome! Please choose a nickname.",
-                # Предлагаем временный вариант
-                'suggested_username': 'x_' + user.username,
-            })
-        else:
-            # Пользователь уже имеет нормальный username
+            # Создаем PlayerState если нужно
+            if created:
+                PlayerState.objects.create(user=user)
+
+            # Проверяем username
+            if created or not user.username or user.username.startswith("user_"):
+                return JsonResponse({
+                    'success': True,
+                    'registered': False,
+                    'welcome_message': "Welcome! Please choose a nickname.",
+                    'suggested_username': 'x_' + user.username,
+                })
+
+            # Генерируем токены
             refresh = RefreshToken.for_user(user)
-
-            # Получаем состояние игрока (PlayerState), чтобы вернуть актуальные данные по ресурсам
-            player_state = PlayerState.objects.filter(user=user).first()
-            if not player_state:
-                # Если почему-то нет PlayerState (например, не создался), то создаём
-                player_state = PlayerState.objects.create(user=user)
+            player_state = PlayerState.objects.get(user=user)
 
             return JsonResponse({
                 'success': True,
@@ -116,13 +98,9 @@ def auth_view(request):
                 'welcome_message': f"Welcome back, {user.username}!",
                 'access_token': str(refresh.access_token),
                 'refresh_token': str(refresh),
-
-                # Доп. поля из вашей User-модели (пример)
                 'ton_balance': user.ton_balance,
                 'platinum_balance': user.platinum_balance,
                 'gold_balance': user.gold_balance,
-
-                # Данные из PlayerState
                 'energy_altar': player_state.energy_altar,
                 'energy_fire': player_state.energy_fire,
                 'energy_waterfall': player_state.energy_waterfall,
@@ -130,40 +108,69 @@ def auth_view(request):
                 'wood': player_state.wood,
                 'enhancements_count': player_state.enhancements_count,
             })
-    else:
-        return JsonResponse({'success': False, 'message': 'Invalid initData'}, status=401)
+        else:
+            logger.error("Invalid initData - validation failed")
+            return JsonResponse({
+                'success': False,
+                'message': 'Invalid initData'
+            }, status=401)
+
+    except Exception as e:
+        logger.error(f"Unexpected error in auth_view: {str(e)}")
+        logger.error(traceback.format_exc())
+        return JsonResponse({
+            'success': False,
+            'message': 'Internal server error'
+        }, status=500)
+
+import logging
+
+# Получаем логгер Django
+logger = logging.getLogger('django')
 
 
 def validate_init_data(init_data: str, bot_token: str) -> bool:
-    """
-    Валидация init_data, присланных Telegram MiniApp:
-    - Проверка хеша, сгенерированного HMAC.
-    - Проверка срока давности (не более 24 часов).
-    """
     try:
+        logger.debug("=== Starting init_data validation ===")
+        logger.debug(f"Raw init_data: {init_data}")
+        logger.debug(f"Bot token: {bot_token}")
+
+        # Парсим данные
         init_data_dict = dict(urllib.parse.parse_qsl(init_data))
+        logger.debug(f"Parsed init_data_dict: {json.dumps(init_data_dict, indent=2)}")
+
+        # Получаем хэш
         hash_received = init_data_dict.pop('hash', None)
+        logger.debug(f"Received hash: {hash_received}")
 
-        # Формируем data_check_string в алфавитном порядке ключей
-        data_check_string = "\n".join(f"{k}={v}" for k, v in sorted(init_data_dict.items()))
+        # Создаем строку для проверки
+        data_check_string = "\n".join([f"{k}={v}" for k, v in sorted(init_data_dict.items())])
+        logger.debug(f"Data check string:\n{data_check_string}")
 
-        # Генерируем секретный ключ
+        # Создаем секретный ключ
         secret_key = hmac.new(b'WebAppData', bot_token.encode(), hashlib.sha256).digest()
-        # Вычисляем ожидаемый хеш
+        logger.debug(f"Secret key (hex): {secret_key.hex()}")
+
+        # Вычисляем хэш
         hash_calculated = hmac.new(secret_key, data_check_string.encode(), hashlib.sha256).hexdigest()
+        logger.debug(f"Calculated hash: {hash_calculated}")
 
-        # Сравниваем
-        if not hmac.compare_digest(hash_received, hash_calculated):
-            return False
-
-        # Проверяем срок давности (auth_date + 86400 секунд = 24 часа)
+        # Проверяем время
+        current_time = time.time()
         auth_time = int(init_data_dict.get('auth_date', 0))
-        if time.time() - auth_time > 86400:
-            return False
+        time_diff = current_time - auth_time
+        logger.debug(f"Time check: current={current_time}, auth={auth_time}, diff={time_diff}")
 
-        return True
+        # Проверяем все условия
+        hash_valid = hmac.compare_digest(hash_received, hash_calculated)
+        time_valid = time_diff <= 86400
+
+        logger.debug(f"Validation results: hash_valid={hash_valid}, time_valid={time_valid}")
+
+        return hash_valid and time_valid
+
     except Exception as e:
-        print(f"Validation error: {e}")
+        logger.error(f"Validation error: {str(e)}", exc_info=True)
         return False
 
 
@@ -201,6 +208,12 @@ def get_player_state(request):
         # Если по каким-то причинам нет PlayerState — создаём
         player_state = PlayerState.objects.create(user=user)
 
+    # Получаем все таймеры
+    can_altar, altar_cooldown = player_state.can_activate_altar()
+    can_food, food_cooldown = player_state.can_gather_food() 
+    can_wood, wood_cooldown = player_state.can_gather_wood()
+    can_waterfall, waterfall_cooldown = player_state.can_activate_waterfall()
+
     return JsonResponse({
         'success': True,
         'energy_altar': player_state.energy_altar,
@@ -209,5 +222,25 @@ def get_player_state(request):
         'food': player_state.food,
         'wood': player_state.wood,
         'enhancements_count': player_state.enhancements_count,
-        # Если есть другие поля — добавьте
+        'timers': {
+            'altar': {
+                'can_activate': can_altar,
+                'cooldown_seconds': altar_cooldown
+            },
+            'food': {
+                'can_gather': can_food,
+                'cooldown_seconds': food_cooldown
+            },
+            'wood': {
+                'can_gather': can_wood, 
+                'cooldown_seconds': wood_cooldown
+            },
+            'waterfall': {
+                'can_activate': can_waterfall,
+                'cooldown_seconds': waterfall_cooldown
+            },
+            'campfire': {
+                'is_burning': player_state.campfire_is_burning()
+            }
+        }
     })

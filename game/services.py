@@ -11,47 +11,33 @@ from django.utils import timezone
 from .models import PlayerState
 from . import constants as c  # Подключаем файл с константами
 import logging
+from django.db.models import F
+from django.db import transaction
+from typing import Tuple
 
 logger = logging.getLogger(__name__)
 
 
-def activate_altar(player_state: PlayerState):
+@transaction.atomic
+def activate_altar(player_state: PlayerState) -> tuple[bool, str, int]:
     """
     Активация алтаря:
-    - Раз в 6-8 часов (мы проверяем минимум 6 часов,
-      верхняя граница 8 часов может применяться по желанию).
-    - Энергия алтаря: +1 (если костёр горит) или +0.5 (если не горит).
-    - 3% шанс увеличения энергии водопада.
+    - Требует 1 энергии огня
+    - Увеличивает энергию алтаря на 1
     """
-    try:
-        now = timezone.now()
-        last_activation = player_state.last_altar_activation
+    can_activate, cooldown = player_state.can_activate_altar()
+    if not can_activate:
+        return False, f"Нужно подождать {cooldown} секунд перед следующей активацией алтаря", cooldown
 
-        if last_activation:
-            time_diff = now - last_activation
-            if time_diff < timedelta(hours=c.ALTAR_ACTIVATION_MIN_HOURS):
-                return False, "Еще не прошло 6 часов с последней активации алтаря."
+    if player_state.energy_fire < 1:
+        return False, "Недостаточно энергии огня для активации алтаря", 0
 
-        # Определяем, горит ли костёр
-        if player_state.campfire_is_burning():
-            altar_energy_gain = c.ALTAR_ENERGY_GAIN_WHEN_BURNING
-        else:
-            altar_energy_gain = c.ALTAR_ENERGY_GAIN_WHEN_NOT_BURNING
-
-        player_state.energy_altar += altar_energy_gain
-        player_state.last_altar_activation = now
-
-        # Шанс 3% на "магический водопад"
-        if random.random() < c.ALTAR_WATERFALL_ACTIVATION_CHANCE:
-            player_state.energy_waterfall += c.ALTAR_WATERFALL_ENERGY_INCREASE
-
-        player_state.save()
-
-        logger.info(f"Алтарь активирован для пользователя {player_state.user.id}")
-        return True, f"Алтарь активирован. Получено {altar_energy_gain} ед. энергии алтаря."
-    except Exception as e:
-        logger.error(f"Ошибка при активации алтаря: {str(e)}")
-        return False, "Произошла ошибка при активации алтаря"
+    player_state.energy_fire = F('energy_fire') - 1
+    player_state.energy_altar = F('energy_altar') + 1
+    player_state.last_altar_activation = timezone.now()
+    player_state.save()
+    
+    return True, "Алтарь успешно активирован", 0
 
 
 def start_campfire(player_state: PlayerState):
@@ -80,51 +66,49 @@ def start_campfire(player_state: PlayerState):
     return True, f"Костёр разожжён. Он будет гореть {c.CAMPFIRE_BURN_TIME_HOURS} часов."
 
 
-def gather_food(player_state: PlayerState):
+@transaction.atomic
+def gather_food(player_state: PlayerState) -> tuple[bool, str]:
     """
-    Сбор еды раз в 3 часа:
-    - Требует 0.15 энергии огня
-    - +5 еды
+    Сбор еды:
+    - Базовое количество 5 единиц
+    - При активном водопаде удваивается
     """
-    now = timezone.now()
-    last_food_time = player_state.last_food_gathering
+    can_gather, cooldown = player_state.can_gather_food()
+    if not can_gather:
+        return False, f"Нужно подождать {cooldown} секунд перед следующим сбором еды"
 
-    if last_food_time and (now - last_food_time) < timedelta(hours=c.FOOD_GATHER_INTERVAL_HOURS):
-        return False, "Слишком рано для сбора еды."
+    # Базовое количество еды
+    food_amount = 5
+    if player_state.waterfall_is_active():
+        food_amount *= 2
 
-    if player_state.energy_fire < c.GATHER_FOOD_FIRE_ENERGY_COST:
-        return False, "Недостаточно энергии огня для сбора еды."
-
-    # Списываем энергию и добавляем еду
-    player_state.energy_fire -= c.GATHER_FOOD_FIRE_ENERGY_COST
-    player_state.food += c.GATHER_FOOD_AMOUNT
-
-    player_state.last_food_gathering = now
+    player_state.food = F('food') + food_amount
+    player_state.last_food_gather = timezone.now()
     player_state.save()
-    return True, f"Вы собрали {c.GATHER_FOOD_AMOUNT} единиц еды."
+    
+    return True, f"Вы собрали {food_amount} единиц еды"
 
 
-def gather_wood(player_state: PlayerState):
+@transaction.atomic
+def gather_wood(player_state: PlayerState) -> tuple[bool, str]:
     """
-    Сбор дерева раз в 6 часов:
+    Сбор дерева:
     - Требует 0.2 энергии огня
     - +3 дерева
     """
-    now = timezone.now()
-    last_wood_time = player_state.last_wood_gathering
+    can_gather, cooldown = player_state.can_gather_wood()
+    if not can_gather:
+        return False, f"Нужно подождать {cooldown} секунд перед следующим сбором дерева"
 
-    if last_wood_time and (now - last_wood_time) < timedelta(hours=c.WOOD_GATHER_INTERVAL_HOURS):
-        return False, "Слишком рано для сбора дерева."
+    if player_state.energy_fire < 0.2:
+        return False, "Недостаточно энергии огня для сбора дерева"
 
-    if player_state.energy_fire < c.GATHER_WOOD_FIRE_ENERGY_COST:
-        return False, "Недостаточно энергии огня для сбора дерева."
-
-    player_state.energy_fire -= c.GATHER_WOOD_FIRE_ENERGY_COST
-    player_state.wood += c.GATHER_WOOD_AMOUNT
-
-    player_state.last_wood_gathering = now
+    player_state.wood = F('wood') + c.GATHER_WOOD_AMOUNT
+    player_state.energy_fire = F('energy_fire') - 0.2
+    player_state.last_wood_gather = timezone.now()
     player_state.save()
-    return True, f"Вы собрали {c.GATHER_WOOD_AMOUNT} единиц дерева."
+    
+    return True, f"Вы собрали {c.GATHER_WOOD_AMOUNT} единиц дерева"
 
 
 def activate_waterfall(player_state: PlayerState):
@@ -211,3 +195,23 @@ def enhance_player(player_state: PlayerState):
     player_state.save()
 
     return True, f"Усиление проведено. Всего усилений: {next_enhancement}."
+
+
+def can_gather_resource(player_state, resource_type):
+    last_gathering = getattr(player_state, f'last_{resource_type}_gathering')
+    if not last_gathering:
+        return True
+    cooldown = timezone.timedelta(minutes=5)  # настройте время как нужно
+    return timezone.now() - last_gathering > cooldown
+
+
+@transaction.atomic
+def start_campfire(player_state):
+    if player_state.wood < 1:
+        return False, "Недостаточно дерева для розжига костра"
+    
+    player_state.wood = F('wood') - 1
+    player_state.energy_fire = F('energy_fire') + 1
+    player_state.last_campfire_start = timezone.now()
+    player_state.save()
+    return True, "Костер успешно разожжен"

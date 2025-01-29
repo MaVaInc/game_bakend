@@ -12,6 +12,7 @@ from django.http import JsonResponse
 import json
 from django.db import transaction
 from django.db.models import F
+import logging
 
 from .models import PlayerState
 from .services import (
@@ -24,6 +25,8 @@ from .services import (
     enhance_player,
 )
 
+logger = logging.getLogger(__name__)
+
 class GameActionThrottle(UserRateThrottle):
     rate = '100/hour'
 
@@ -34,22 +37,38 @@ class AltarActivateView(APIView):
     @transaction.atomic
     def post(self, request):
         try:
+            logger.info("=== Starting AltarActivateView ===")
+            logger.info(f"User: {request.user}")
+            
             player_state = PlayerState.objects.select_for_update().get(user=request.user)
-            success, message = activate_altar(player_state)
-            return Response(
-                {"success": success, "message": message},
-                status=status.HTTP_200_OK if success else status.HTTP_400_BAD_REQUEST
-            )
+            logger.info(f"Current player state: {player_state.__dict__}")
+            
+            success, message, cooldown = activate_altar(player_state)
+            logger.info(f"Altar activation result: success={success}, message={message}, cooldown={cooldown}")
+            
+            # Проверяем, что player_state был сохранен
+            player_state.refresh_from_db()
+            logger.info(f"Updated player state: {player_state.__dict__}")
+            
+            return Response({
+                "success": success,
+                "message": message,
+                "cooldown": cooldown  # Время в секундах до следующей возможной активации
+            })
+            
         except PlayerState.DoesNotExist:
+            logger.error(f"PlayerState not found for user {request.user}")
             return Response(
                 {"success": False, "message": "Состояние игрока не найдено"},
                 status=status.HTTP_404_NOT_FOUND
             )
         except Exception as e:
-            return Response(
-                {"success": False, "message": "Внутренняя ошибка сервера"},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
+            logger.error(f"Error in AltarActivateView: {str(e)}", exc_info=True)
+            return Response({
+                "success": False,
+                "message": f"Внутренняя ошибка сервера: {str(e)}",
+                "cooldown": 0
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class CampfireStartView(APIView):

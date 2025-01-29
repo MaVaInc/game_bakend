@@ -13,19 +13,18 @@ from .views import (
     WaterfallActivateView,
     WaterfallBoostView,
     EnhancePlayerView,
-    UserRegistrationView,
-    UserLoginView,
+    # UserRegistrationView,
+    
 )
+
 from .views_auth import (
     auth_view,
-    set_username,
     get_player_state
 )
 
 urlpatterns = [
     # Авторизация и профиль
     path('auth/', auth_view, name='tg-auth'),
-    path('set-username/', set_username, name='set-username'),
     path('player-state/', get_player_state, name='player-state'),
 
     # Игровые механики
@@ -38,6 +37,6 @@ urlpatterns = [
     path('enhance/', EnhancePlayerView.as_view(), name='enhance-player'),
 
     # Регистрация и авторизация
-    path('register/', UserRegistrationView.as_view(), name='register'),
-    path('login/', UserLoginView.as_view(), name='login'),
+    # path('register/', UserRegistrationView.as_view(), name='register'),
+    # path('login/', UserLoginView.as_view(), name='login'),
 ]
