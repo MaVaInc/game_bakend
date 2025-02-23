@@ -1,0 +1,1576 @@
+[INFO] 2025-01-28 04:41:58,129 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:43:49,133 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 04:43:49,424 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:44:34,904 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 04:44:35,255 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:45:09,281 autoreload /home/roman/pycharm_projects/game_backend/game/urls.py changed, reloading.
+[INFO] 2025-01-28 04:45:09,622 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:45:53,804 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 04:45:54,236 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:45:59,320 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 04:45:59,320 views_auth Received init_data: query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738039559&hash=8afcd5a504fc15b4889a6d99425c47ef552c094eb20722d1d6cd3a703bdeef1e
+[INFO] 2025-01-28 04:45:59,320 views_auth Using bot_token: 7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
+[INFO] 2025-01-28 04:45:59,320 views_auth === Starting init_data validation ===
+[INFO] 2025-01-28 04:45:59,321 views_auth Raw init_data: query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738039559&hash=8afcd5a504fc15b4889a6d99425c47ef552c094eb20722d1d6cd3a703bdeef1e
+[INFO] 2025-01-28 04:45:59,321 views_auth Parsed init_data_dict: {
+  "query_id": "AAFz2DA4AAAAAHPYMDiDL44g",
+  "user": "{\"id\": 942725235, \"first_name\": \"PyTorch\", \"last_name\": \"Love\", \"username\": \"mavainc\", \"language_code\": \"ru\", \"is_premium\": true, \"allows_write_to_pm\": true, \"photo_url\": \"https://t.me/i/userpic/320/ifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg\"}",
+  "chat_instance": "5919886264079046979",
+  "chat_type": "sender",
+  "auth_date": "1738039559",
+  "hash": "8afcd5a504fc15b4889a6d99425c47ef552c094eb20722d1d6cd3a703bdeef1e"
+}
+[INFO] 2025-01-28 04:45:59,321 views_auth Received hash: 8afcd5a504fc15b4889a6d99425c47ef552c094eb20722d1d6cd3a703bdeef1e
+[INFO] 2025-01-28 04:45:59,321 views_auth Data check string:
+auth_date=1738039559
+chat_instance=5919886264079046979
+chat_type=sender
+query_id=AAFz2DA4AAAAAHPYMDiDL44g
+user={"id": 942725235, "first_name": "PyTorch", "last_name": "Love", "username": "mavainc", "language_code": "ru", "is_premium": true, "allows_write_to_pm": true, "photo_url": "https://t.me/i/userpic/320/ifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg"}
+[INFO] 2025-01-28 04:45:59,321 views_auth Secret key (hex): aee7736d4b7b6f6bd5833b8f49f37d206cc20cf4d17aa2dcd9cb963a8363dd73
+[INFO] 2025-01-28 04:45:59,321 views_auth Calculated hash: 8afcd5a504fc15b4889a6d99425c47ef552c094eb20722d1d6cd3a703bdeef1e
+[ERROR] 2025-01-28 04:45:59,321 views_auth Validation error: name 'time' is not defined
+[ERROR] 2025-01-28 04:45:59,322 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 61, in validate_init_data
+    current_time = time.time()
+                   ^^^^
+NameError: name 'time' is not defined
+
+[ERROR] 2025-01-28 04:45:59,322 views_auth Invalid initData
+[WARNING] 2025-01-28 04:45:59,323 log Unauthorized: /game/auth/
+[WARNING] 2025-01-28 04:45:59,323 basehttp "POST /game/auth/ HTTP/1.1" 401 49
+[INFO] 2025-01-28 04:46:28,374 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 04:46:28,743 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:46:35,500 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 04:46:35,500 views_auth Received init_data: query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738039595&hash=ec5308760a0dbc898290fb12e5e16bcea19505f69039bca3cd4ecb2b51092cd2
+[INFO] 2025-01-28 04:46:35,500 views_auth Using bot_token: 7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
+[INFO] 2025-01-28 04:46:35,500 views_auth === Starting init_data validation ===
+[INFO] 2025-01-28 04:46:35,500 views_auth Raw init_data: query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738039595&hash=ec5308760a0dbc898290fb12e5e16bcea19505f69039bca3cd4ecb2b51092cd2
+[INFO] 2025-01-28 04:46:35,501 views_auth Parsed init_data_dict: {
+  "query_id": "AAFz2DA4AAAAAHPYMDiDL44g",
+  "user": "{\"id\": 942725235, \"first_name\": \"PyTorch\", \"last_name\": \"Love\", \"username\": \"mavainc\", \"language_code\": \"ru\", \"is_premium\": true, \"allows_write_to_pm\": true, \"photo_url\": \"https://t.me/i/userpic/320/ifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg\"}",
+  "chat_instance": "5919886264079046979",
+  "chat_type": "sender",
+  "auth_date": "1738039595",
+  "hash": "ec5308760a0dbc898290fb12e5e16bcea19505f69039bca3cd4ecb2b51092cd2"
+}
+[INFO] 2025-01-28 04:46:35,501 views_auth Received hash: ec5308760a0dbc898290fb12e5e16bcea19505f69039bca3cd4ecb2b51092cd2
+[INFO] 2025-01-28 04:46:35,501 views_auth Data check string:
+auth_date=1738039595
+chat_instance=5919886264079046979
+chat_type=sender
+query_id=AAFz2DA4AAAAAHPYMDiDL44g
+user={"id": 942725235, "first_name": "PyTorch", "last_name": "Love", "username": "mavainc", "language_code": "ru", "is_premium": true, "allows_write_to_pm": true, "photo_url": "https://t.me/i/userpic/320/ifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg"}
+[INFO] 2025-01-28 04:46:35,501 views_auth Secret key (hex): aee7736d4b7b6f6bd5833b8f49f37d206cc20cf4d17aa2dcd9cb963a8363dd73
+[INFO] 2025-01-28 04:46:35,501 views_auth Calculated hash: ec5308760a0dbc898290fb12e5e16bcea19505f69039bca3cd4ecb2b51092cd2
+[INFO] 2025-01-28 04:46:35,501 views_auth Time check: current=1738039595.5018325, auth=1738039595, diff=0.5018324851989746
+[INFO] 2025-01-28 04:46:35,501 views_auth Validation results: hash_valid=True, time_valid=True
+[ERROR] 2025-01-28 04:46:35,562 log Internal Server Error: /game/auth/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+[ERROR] 2025-01-28 04:46:35,563 basehttp "POST /game/auth/ HTTP/1.1" 500 84162
+[INFO] 2025-01-28 04:50:31,700 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 04:50:31,988 autoreload Watching for file changes with StatReloader
+[WARNING] 2025-01-28 04:50:46,408 log Unauthorized: /game/auth/
+[WARNING] 2025-01-28 04:50:46,408 basehttp "POST /game/auth/ HTTP/1.1" 401 49
+[INFO] 2025-01-28 04:54:12,659 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 04:54:12,943 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:54:58,584 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 04:54:58,584 views_auth Request method: POST
+[INFO] 2025-01-28 04:54:58,584 views_auth Request headers: {'Content-Length': '545', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 04:54:58,585 views_auth Request data: {'initData': 'query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040098&hash=7fa03c62b41e42b4c8941d57aaaae932bd1d621e4487704c801461ce9d078f2c'}
+[INFO] 2025-01-28 04:54:58,585 views_auth Extracted init_data: query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040098&hash=7fa03c62b41e42b4c8941d57aaaae932bd1d621e4487704c801461ce9d078f2c
+[INFO] 2025-01-28 04:54:58,585 views_auth Using bot_token: 8093000259:AAE_TCJK6gu7_MC0t4fiHdllZGZEBEugROQ
+[INFO] 2025-01-28 04:54:58,585 views_auth About to start validation...
+[INFO] 2025-01-28 04:54:58,585 views_auth Validation result: False
+[WARNING] 2025-01-28 04:54:58,586 log Unauthorized: /game/auth/
+[WARNING] 2025-01-28 04:54:58,586 basehttp "POST /game/auth/ HTTP/1.1" 401 49
+[INFO] 2025-01-28 04:56:56,259 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 04:56:56,259 views_auth Request method: POST
+[INFO] 2025-01-28 04:56:56,259 views_auth Request headers: {'Content-Length': '545', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 04:56:56,259 views_auth Request data: {'initData': 'query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040216&hash=13ace142d4efab2932ebd2f947729b38e2444c9a15674398726096559058da95'}
+[INFO] 2025-01-28 04:56:56,260 views_auth Extracted init_data: query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040216&hash=13ace142d4efab2932ebd2f947729b38e2444c9a15674398726096559058da95
+[INFO] 2025-01-28 04:56:56,260 views_auth Using bot_token: 8093000259:AAE_TCJK6gu7_MC0t4fiHdllZGZEBEugROQ
+[INFO] 2025-01-28 04:56:56,260 views_auth About to start validation...
+[INFO] 2025-01-28 04:56:56,260 views_auth Validation result: True
+[ERROR] 2025-01-28 04:56:56,428 log Internal Server Error: /game/auth/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+game.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.datetime'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 83, in auth_view
+    user, created = User.objects.get_or_create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 955, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/roman/pycharm_projects/game_backend/game/models.py", line 115, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 62, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1835, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1758, in as_sql
+    value_rows = [
+                 ^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1759, in <listcomp>
+    [
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1760, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1699, in prepare_value
+    return field.get_db_prep_save(value, connection=self.connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1008, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2130, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1001, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 4, 56, 56, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+[ERROR] 2025-01-28 04:56:56,434 basehttp "POST /game/auth/ HTTP/1.1" 500 25552
+[INFO] 2025-01-28 04:57:58,378 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 04:58:01,677 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 04:58:01,677 views_auth Request method: POST
+[INFO] 2025-01-28 04:58:01,677 views_auth Request headers: {'Content-Length': '545', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 04:58:01,677 views_auth Request data: {'initData': 'query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040281&hash=2c762cb9d2ee916bbef92ec159cb700a13cb3b3bcb08913aa11b7066ab58232b'}
+[INFO] 2025-01-28 04:58:01,677 views_auth Extracted init_data: query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040281&hash=2c762cb9d2ee916bbef92ec159cb700a13cb3b3bcb08913aa11b7066ab58232b
+[INFO] 2025-01-28 04:58:01,677 views_auth Using bot_token: 8093000259:AAE_TCJK6gu7_MC0t4fiHdllZGZEBEugROQ
+[INFO] 2025-01-28 04:58:01,677 views_auth About to start validation...
+[INFO] 2025-01-28 04:58:01,678 views_auth Validation result: True
+[ERROR] 2025-01-28 04:58:01,709 log Internal Server Error: /game/auth/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+game.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.datetime'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 83, in auth_view
+    user, created = User.objects.get_or_create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 955, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/roman/pycharm_projects/game_backend/game/models.py", line 115, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 62, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1835, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1758, in as_sql
+    value_rows = [
+                 ^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1759, in <listcomp>
+    [
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1760, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1699, in prepare_value
+    return field.get_db_prep_save(value, connection=self.connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1008, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2130, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1001, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 4, 58, 1, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+[ERROR] 2025-01-28 04:58:01,717 basehttp "POST /game/auth/ HTTP/1.1" 500 25550
+[INFO] 2025-01-28 04:59:56,512 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 04:59:56,819 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 05:00:14,970 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 05:00:14,971 views_auth Request method: POST
+[INFO] 2025-01-28 05:00:14,971 views_auth Request headers: {'Content-Length': '545', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 05:00:14,971 views_auth Request data: {'initData': 'query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040414&hash=87b76b1f3ef6f20f1fbcca1d1048a16b796a1670c9ee72031d52e6ad7c865b10'}
+[ERROR] 2025-01-28 05:00:14,973 views_auth Unexpected error in auth_view: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 5, 0, 14, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+[ERROR] 2025-01-28 05:00:14,993 log Internal Server Error: /game/auth/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+game.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.datetime'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 64, in auth_view
+    user, created = User.objects.get_or_create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 955, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/roman/pycharm_projects/game_backend/game/models.py", line 115, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 62, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1835, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1758, in as_sql
+    value_rows = [
+                 ^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1759, in <listcomp>
+    [
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1760, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1699, in prepare_value
+    return field.get_db_prep_save(value, connection=self.connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1008, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2130, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1001, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 5, 0, 14, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 122, in auth_view
+    logger.error(traceback.format_exc())
+                 ^^^^^^^^^
+NameError: name 'traceback' is not defined
+[ERROR] 2025-01-28 05:00:14,996 basehttp "POST /game/auth/ HTTP/1.1" 500 25724
+[INFO] 2025-01-28 05:00:15,588 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 05:00:16,025 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 05:01:44,467 autoreload /home/roman/pycharm_projects/game_backend/game/views_auth.py changed, reloading.
+[INFO] 2025-01-28 05:01:44,819 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 05:01:48,930 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 05:01:48,931 views_auth Request method: POST
+[INFO] 2025-01-28 05:01:48,931 views_auth Request headers: {'Content-Length': '545', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 05:01:48,931 views_auth Request data: {'initData': 'query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040508&hash=5735f8b654c07350f6ae69eaef01ba41e406ef940bd498217168364753697e04'}
+[ERROR] 2025-01-28 05:01:48,934 views_auth Unexpected error in auth_view: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 5, 1, 48, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+[ERROR] 2025-01-28 05:01:48,937 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+game.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.datetime'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 65, in auth_view
+    user, created = User.objects.get_or_create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 955, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/roman/pycharm_projects/game_backend/game/models.py", line 115, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 62, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1835, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1758, in as_sql
+    value_rows = [
+                 ^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1759, in <listcomp>
+    [
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1760, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1699, in prepare_value
+    return field.get_db_prep_save(value, connection=self.connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1008, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2130, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1001, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 5, 1, 48, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+
+[ERROR] 2025-01-28 05:01:48,938 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 05:01:48,938 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 05:04:03,913 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 05:04:07,266 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 05:04:07,266 views_auth Request method: POST
+[INFO] 2025-01-28 05:04:07,267 views_auth Request headers: {'Content-Length': '545', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 05:04:07,267 views_auth Request data: {'initData': 'query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040647&hash=e524bd91136e35b74944a75e9f48ffd925dccf265e1cdc42e098c3ae4e64f32f'}
+[ERROR] 2025-01-28 05:04:07,270 views_auth Unexpected error in auth_view: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 5, 4, 7, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+[ERROR] 2025-01-28 05:04:07,273 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+game.models.User.DoesNotExist: User matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.datetime'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 65, in auth_view
+    user, created = User.objects.get_or_create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 955, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/roman/pycharm_projects/game_backend/game/models.py", line 115, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 62, in save
+    super().save(*args, **kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1835, in execute_sql
+    for sql, params in self.as_sql():
+                       ^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1758, in as_sql
+    value_rows = [
+                 ^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1759, in <listcomp>
+    [
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1760, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1699, in prepare_value
+    return field.get_db_prep_save(value, connection=self.connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1008, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2130, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 1001, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'auth_date' expected a number but got datetime.datetime(2025, 1, 28, 5, 4, 7, tzinfo=zoneinfo.ZoneInfo(key='UTC')).
+
+[ERROR] 2025-01-28 05:04:07,273 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 05:04:07,274 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 05:04:32,924 autoreload /home/roman/pycharm_projects/game_backend/game/models.py changed, reloading.
+[INFO] 2025-01-28 05:04:33,201 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 05:04:46,801 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 05:05:01,651 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 05:05:05,274 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 05:05:05,274 views_auth Request method: POST
+[INFO] 2025-01-28 05:05:05,275 views_auth Request headers: {'Content-Length': '545', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 05:05:05,275 views_auth Request data: {'initData': 'query_id=AAFz2DA4AAAAAHPYMDiDL44g&user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040705&hash=01043cbc537e4480c0874b0dc06885f20aa022525c57db7420e31bac86a14420'}
+[INFO] 2025-01-28 05:05:05,326 basehttp "POST /game/auth/ HTTP/1.1" 200 130
+[INFO] 2025-01-28 05:06:42,039 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 05:06:42,039 views_auth Request method: POST
+[INFO] 2025-01-28 05:06:42,040 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 05:06:42,040 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738040802&hash=e3f42e7805c776e8f226bc9e229d7b54c31c424a4bfed30df1d27d5fef2f5060'}
+[INFO] 2025-01-28 05:06:42,223 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 17:42:48,464 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:42:48,464 views_auth Request method: POST
+[INFO] 2025-01-28 17:42:48,464 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:42:48,464 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738086168&hash=6b8fd7af40b88d66b358d4fc965f200df38b6e3af5d0f6e3e611a1f782666396'}
+[INFO] 2025-01-28 17:42:48,492 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[WARNING] 2025-01-28 17:42:48,512 log Method Not Allowed: /game/player-state/
+[WARNING] 2025-01-28 17:42:48,515 basehttp "GET /game/player-state/ HTTP/1.1" 405 40
+[INFO] 2025-01-28 17:42:48,565 basehttp "POST /game/gather/food/ HTTP/1.1" 200 71
+[INFO] 2025-01-28 17:42:48,633 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 77
+[ERROR] 2025-01-28 17:42:48,641 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 17:42:48,641 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 78
+[INFO] 2025-01-28 17:42:48,668 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-28 17:42:48,687 basehttp "POST /game/waterfall/activate/ HTTP/1.1" 200 126
+[INFO] 2025-01-28 17:42:48,693 basehttp "POST /game/waterfall/boost/ HTTP/1.1" 200 113
+[INFO] 2025-01-28 17:42:48,703 basehttp "POST /game/waterfall/boost/ HTTP/1.1" 200 113
+[INFO] 2025-01-28 17:42:48,712 basehttp "POST /game/enhance/ HTTP/1.1" 200 94
+[WARNING] 2025-01-28 17:42:48,721 log Method Not Allowed: /game/player-state/
+[WARNING] 2025-01-28 17:42:48,724 basehttp "GET /game/player-state/ HTTP/1.1" 405 40
+[INFO] 2025-01-28 17:48:27,130 autoreload /home/roman/pycharm_projects/game_backend/game/views.py changed, reloading.
+[INFO] 2025-01-28 17:48:28,020 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:48:31,145 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:48:31,145 views_auth Request method: POST
+[INFO] 2025-01-28 17:48:31,145 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:48:31,146 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738086511&hash=55ad7a231ff86030a4ec769b21f871f220724eef5005b7674d9678023c38a31f'}
+[INFO] 2025-01-28 17:48:31,177 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 17:48:31,183 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[INFO] 2025-01-28 17:48:31,207 basehttp "POST /game/gather/food/ HTTP/1.1" 200 71
+[INFO] 2025-01-28 17:48:31,231 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 77
+[INFO] 2025-01-28 17:48:31,238 basehttp "POST /game/player-state/ HTTP/1.1" 200 140
+[INFO] 2025-01-28 17:48:31,243 basehttp "POST /game/gather/food/ HTTP/1.1" 200 109
+[INFO] 2025-01-28 17:48:31,247 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 115
+[INFO] 2025-01-28 17:48:31,253 basehttp "POST /game/player-state/ HTTP/1.1" 200 140
+[INFO] 2025-01-28 17:48:31,258 basehttp "POST /game/gather/food/ HTTP/1.1" 200 109
+[INFO] 2025-01-28 17:48:31,262 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 115
+[INFO] 2025-01-28 17:48:31,268 basehttp "POST /game/player-state/ HTTP/1.1" 200 140
+[INFO] 2025-01-28 17:48:31,293 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-28 17:48:31,298 basehttp "POST /game/player-state/ HTTP/1.1" 200 140
+[ERROR] 2025-01-28 17:48:31,306 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 17:48:31,306 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 78
+[INFO] 2025-01-28 17:48:31,311 basehttp "POST /game/player-state/ HTTP/1.1" 200 140
+[INFO] 2025-01-28 17:48:31,317 basehttp "POST /game/waterfall/activate/ HTTP/1.1" 200 126
+[INFO] 2025-01-28 17:48:31,322 basehttp "POST /game/enhance/ HTTP/1.1" 200 94
+[INFO] 2025-01-28 17:48:31,326 basehttp "POST /game/player-state/ HTTP/1.1" 200 140
+[INFO] 2025-01-28 17:52:10,715 autoreload /home/roman/pycharm_projects/game_backend/game/views.py changed, reloading.
+[INFO] 2025-01-28 17:52:11,031 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:52:34,241 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:52:38,748 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:52:38,748 views_auth Request method: POST
+[INFO] 2025-01-28 17:52:38,748 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:52:38,748 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738086758&hash=7ce8a7ca92a752d584a245fde7b259ca17099a546187e19974d6d87ef801ad5d'}
+[ERROR] 2025-01-28 17:52:38,778 views_auth Unexpected error in auth_view: no such column: game_playerstate.last_food_gather
+[ERROR] 2025-01-28 17:52:38,793 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: game_playerstate.last_food_gather
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 96, in auth_view
+    player_state = PlayerState.objects.get(user=user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: game_playerstate.last_food_gather
+
+[ERROR] 2025-01-28 17:52:38,794 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 17:52:38,794 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 17:52:46,912 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:52:46,912 views_auth Request method: POST
+[INFO] 2025-01-28 17:52:46,912 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:52:46,912 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738086766&hash=32c587a35934be526d16f7802fa986cf5f148a7a9ccf4e6f3a9259da438ad5f0'}
+[ERROR] 2025-01-28 17:52:46,940 views_auth Unexpected error in auth_view: no such column: game_playerstate.last_food_gather
+[ERROR] 2025-01-28 17:52:46,943 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: game_playerstate.last_food_gather
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 96, in auth_view
+    player_state = PlayerState.objects.get(user=user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: game_playerstate.last_food_gather
+
+[ERROR] 2025-01-28 17:52:46,944 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 17:52:46,945 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 17:53:50,991 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:53:50,991 views_auth Request method: POST
+[INFO] 2025-01-28 17:53:50,992 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:53:50,992 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738086830&hash=31606343dbb9fe45ce2c706011486a4a839b318ae07b3faf6f709faaa64cb5da'}
+[ERROR] 2025-01-28 17:53:51,023 views_auth Unexpected error in auth_view: no such column: game_playerstate.last_food_gather
+[ERROR] 2025-01-28 17:53:51,026 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: game_playerstate.last_food_gather
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 96, in auth_view
+    player_state = PlayerState.objects.get(user=user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: game_playerstate.last_food_gather
+
+[ERROR] 2025-01-28 17:53:51,027 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 17:53:51,028 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 17:55:22,110 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:55:22,111 views_auth Request method: POST
+[INFO] 2025-01-28 17:55:22,111 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:55:22,111 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738086922&hash=8daa536f8036e4bc7be706546acbcb69fe16250f6b0edc4540942f2448d45a45'}
+[ERROR] 2025-01-28 17:55:22,138 views_auth Unexpected error in auth_view: no such column: game_playerstate.last_food_gather
+[ERROR] 2025-01-28 17:55:22,140 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: game_playerstate.last_food_gather
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 96, in auth_view
+    player_state = PlayerState.objects.get(user=user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: game_playerstate.last_food_gather
+
+[ERROR] 2025-01-28 17:55:22,140 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 17:55:22,141 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 17:55:40,383 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:55:45,017 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:55:45,017 views_auth Request method: POST
+[INFO] 2025-01-28 17:55:45,017 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:55:45,017 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738086945&hash=439435627e3949e70febd9207eb49002a18bdb7bd596e8a7b666bd65b58881c1'}
+[ERROR] 2025-01-28 17:55:45,047 views_auth Unexpected error in auth_view: no such column: game_playerstate.last_food_gather
+[ERROR] 2025-01-28 17:55:45,055 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: game_playerstate.last_food_gather
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 96, in auth_view
+    player_state = PlayerState.objects.get(user=user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: game_playerstate.last_food_gather
+
+[ERROR] 2025-01-28 17:55:45,057 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 17:55:45,059 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 17:57:35,721 autoreload /home/roman/pycharm_projects/game_backend/game/migrations/0001_initial.py changed, reloading.
+[INFO] 2025-01-28 17:57:36,401 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:57:57,600 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:58:01,110 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:58:01,110 views_auth Request method: POST
+[INFO] 2025-01-28 17:58:01,110 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:58:01,111 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738087081&hash=2c24dc636e3cc9f091478208ab84d9fb8e60fb5d5b2ea2cb4d395a5a4067601b'}
+[ERROR] 2025-01-28 17:58:01,139 views_auth Unexpected error in auth_view: no such column: game_playerstate.last_food_gather
+[ERROR] 2025-01-28 17:58:01,141 views_auth Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: game_playerstate.last_food_gather
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/game/views_auth.py", line 96, in auth_view
+    player_state = PlayerState.objects.get(user=user)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: game_playerstate.last_food_gather
+
+[ERROR] 2025-01-28 17:58:01,141 log Internal Server Error: /game/auth/
+[ERROR] 2025-01-28 17:58:01,142 basehttp "POST /game/auth/ HTTP/1.1" 500 54
+[INFO] 2025-01-28 17:58:48,876 autoreload /home/roman/pycharm_projects/game_backend/game/migrations/0001_initial.py changed, reloading.
+[INFO] 2025-01-28 17:58:49,170 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:59:22,150 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 17:59:26,403 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 17:59:26,404 views_auth Request method: POST
+[INFO] 2025-01-28 17:59:26,404 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 17:59:26,404 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738087166&hash=31880b5ae02611c5c3ea2cd5f8a3b7999baddc52b1b87da8de9ea002af503201'}
+[INFO] 2025-01-28 17:59:26,460 basehttp "POST /game/auth/ HTTP/1.1" 200 130
+[INFO] 2025-01-28 18:01:32,439 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 18:01:44,326 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 18:02:14,945 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 18:03:22,048 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 18:03:34,196 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 18:03:34,196 views_auth Request method: POST
+[INFO] 2025-01-28 18:03:34,196 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 18:03:34,197 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738087414&hash=d8ffd5b4eb3e3f52b6236406d53abb72217737f9771403125f07b2f494893a06'}
+[INFO] 2025-01-28 18:03:34,227 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 18:03:34,233 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[INFO] 2025-01-28 18:03:34,260 basehttp "POST /game/gather/food/ HTTP/1.1" 200 71
+[INFO] 2025-01-28 18:03:34,304 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 77
+[INFO] 2025-01-28 18:03:34,327 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[INFO] 2025-01-28 18:03:34,354 basehttp "POST /game/gather/food/ HTTP/1.1" 200 109
+[INFO] 2025-01-28 18:03:34,388 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 115
+[INFO] 2025-01-28 18:03:34,409 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[INFO] 2025-01-28 18:03:34,419 basehttp "POST /game/gather/food/ HTTP/1.1" 200 109
+[INFO] 2025-01-28 18:03:34,430 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 115
+[INFO] 2025-01-28 18:03:34,437 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[INFO] 2025-01-28 18:03:34,464 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-28 18:03:34,471 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[ERROR] 2025-01-28 18:03:34,491 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 18:03:34,491 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 120
+[INFO] 2025-01-28 18:03:34,497 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[INFO] 2025-01-28 18:03:34,504 basehttp "POST /game/waterfall/activate/ HTTP/1.1" 200 126
+[INFO] 2025-01-28 18:03:34,511 basehttp "POST /game/enhance/ HTTP/1.1" 200 94
+[INFO] 2025-01-28 18:03:34,516 basehttp "POST /game/player-state/ HTTP/1.1" 200 139
+[INFO] 2025-01-28 23:17:41,366 autoreload /home/roman/pycharm_projects/game_backend/game/views.py changed, reloading.
+[INFO] 2025-01-28 23:17:41,740 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:29:04,968 autoreload /home/roman/pycharm_projects/game_backend/game_backend/settings.py changed, reloading.
+[INFO] 2025-01-28 23:29:05,429 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:30:03,949 autoreload /home/roman/pycharm_projects/game_backend/game_backend/settings.py changed, reloading.
+[INFO] 2025-01-28 23:30:04,179 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:31:18,839 autoreload /home/roman/pycharm_projects/game_backend/game_backend/settings.py changed, reloading.
+[INFO] 2025-01-28 23:31:19,190 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:31:50,124 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 23:31:50,124 views_auth Request method: POST
+[INFO] 2025-01-28 23:31:50,124 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 23:31:50,125 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738107110&hash=f92d16b486313d5fcc90ff01d1c637c0e7b2ba3aa750c237276705a6d941dcb6'}
+[INFO] 2025-01-28 23:31:50,177 basehttp "POST /game/auth/ HTTP/1.1" 200 130
+[INFO] 2025-01-28 23:33:36,151 autoreload /home/roman/pycharm_projects/game_backend/game_backend/settings.py changed, reloading.
+[INFO] 2025-01-28 23:33:36,555 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:34:05,283 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:34:09,456 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 23:34:09,456 views_auth Request method: POST
+[INFO] 2025-01-28 23:34:09,456 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 23:34:09,456 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738107249&hash=e153c00de5ad25c346ad0d327a59e0ddb342e413679bfe768e2671382cefd971'}
+[INFO] 2025-01-28 23:34:09,488 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 23:34:10,508 basehttp "POST /game/player-state/ HTTP/1.1" 200 408
+[ERROR] 2025-01-28 23:34:11,074 log Internal Server Error: /game/gather/food/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/views.py", line 90, in post
+    success, message = gather_food(player_state)
+    ^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[ERROR] 2025-01-28 23:34:11,076 basehttp "POST /game/gather/food/ HTTP/1.1" 500 106016
+[ERROR] 2025-01-28 23:34:11,635 log Internal Server Error: /game/gather/wood/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/views.py", line 106, in post
+    success, message = gather_wood(player_state)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/services.py", line 84, in gather_wood
+    if not can_gather_resource(player_state, 'wood'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/services.py", line 180, in can_gather_resource
+    last_gathering = getattr(player_state, f'last_{resource_type}_gathering')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlayerState' object has no attribute 'last_wood_gathering'
+[ERROR] 2025-01-28 23:34:11,636 basehttp "POST /game/gather/wood/ HTTP/1.1" 500 118466
+[INFO] 2025-01-28 23:34:12,160 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 102
+[ERROR] 2025-01-28 23:34:12,679 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 23:34:12,680 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 133
+[INFO] 2025-01-28 23:34:13,197 basehttp "POST /game/waterfall/activate/ HTTP/1.1" 200 126
+[INFO] 2025-01-28 23:34:13,720 basehttp "POST /game/enhance/ HTTP/1.1" 200 94
+[INFO] 2025-01-28 23:39:01,037 autoreload /home/roman/pycharm_projects/game_backend/game/models.py changed, reloading.
+[INFO] 2025-01-28 23:39:01,352 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:39:08,608 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:39:23,059 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 23:39:23,060 views_auth Request method: POST
+[INFO] 2025-01-28 23:39:23,060 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 23:39:23,060 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738107563&hash=196722da19defed671d665ba76f39add2b299b49163713d61eae41545531c477'}
+[INFO] 2025-01-28 23:39:23,109 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 23:39:23,128 basehttp "POST /game/player-state/ HTTP/1.1" 200 408
+[ERROR] 2025-01-28 23:39:23,686 log Internal Server Error: /game/gather/wood/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/views.py", line 106, in post
+    success, message = gather_wood(player_state)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/services.py", line 91, in gather_wood
+    if not can_gather_resource(player_state, 'wood'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/services.py", line 187, in can_gather_resource
+    last_gathering = getattr(player_state, f'last_{resource_type}_gathering')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlayerState' object has no attribute 'last_wood_gathering'
+[ERROR] 2025-01-28 23:39:23,688 basehttp "POST /game/gather/wood/ HTTP/1.1" 500 118466
+[INFO] 2025-01-28 23:39:24,213 basehttp "POST /game/player-state/ HTTP/1.1" 200 408
+[INFO] 2025-01-28 23:39:24,725 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 102
+[INFO] 2025-01-28 23:39:25,241 basehttp "POST /game/player-state/ HTTP/1.1" 200 408
+[ERROR] 2025-01-28 23:39:25,759 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 23:39:25,760 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 133
+[INFO] 2025-01-28 23:39:26,274 basehttp "POST /game/player-state/ HTTP/1.1" 200 408
+[ERROR] 2025-01-28 23:39:26,804 log Internal Server Error: /game/gather/food/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/game/views.py", line 90, in post
+    success, message = gather_food(player_state)
+    ^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[ERROR] 2025-01-28 23:39:26,805 basehttp "POST /game/gather/food/ HTTP/1.1" 500 106016
+[INFO] 2025-01-28 23:39:27,326 basehttp "POST /game/player-state/ HTTP/1.1" 200 408
+[INFO] 2025-01-28 23:41:53,192 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:43:40,711 autoreload /home/roman/pycharm_projects/game_backend/game/services.py changed, reloading.
+[INFO] 2025-01-28 23:43:41,113 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:45:39,482 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:45:43,450 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 23:45:43,450 views_auth Request method: POST
+[INFO] 2025-01-28 23:45:43,450 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 23:45:43,451 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738107943&hash=4f3f8db6c0bbb575e4747fb8e4a6babdb26c3bdcab26005b7929cd22fa68b132'}
+[INFO] 2025-01-28 23:45:43,484 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 23:45:43,490 basehttp "POST /game/player-state/ HTTP/1.1" 200 408
+[INFO] 2025-01-28 23:45:44,024 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 76
+[INFO] 2025-01-28 23:45:44,540 basehttp "POST /game/player-state/ HTTP/1.1" 200 411
+[INFO] 2025-01-28 23:45:45,088 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-28 23:45:45,605 basehttp "POST /game/player-state/ HTTP/1.1" 200 410
+[ERROR] 2025-01-28 23:45:46,130 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 23:45:46,132 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 133
+[INFO] 2025-01-28 23:45:46,650 basehttp "POST /game/player-state/ HTTP/1.1" 200 410
+[INFO] 2025-01-28 23:45:47,198 basehttp "POST /game/gather/food/ HTTP/1.1" 200 70
+[INFO] 2025-01-28 23:45:47,715 basehttp "POST /game/player-state/ HTTP/1.1" 200 413
+[INFO] 2025-01-28 23:47:13,548 autoreload /home/roman/pycharm_projects/game_backend/game/models.py changed, reloading.
+[INFO] 2025-01-28 23:47:13,986 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:49:06,597 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:49:12,456 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 23:49:12,456 views_auth Request method: POST
+[INFO] 2025-01-28 23:49:12,456 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 23:49:12,456 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738108152&hash=d79fab30741fd36d41e66e07c1fdc2f34c18419771dfedfffb8cde71c78c9496'}
+[INFO] 2025-01-28 23:49:12,504 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 23:49:12,523 basehttp "POST /game/player-state/ HTTP/1.1" 200 411
+[INFO] 2025-01-28 23:49:13,041 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 131
+[INFO] 2025-01-28 23:49:13,555 basehttp "POST /game/player-state/ HTTP/1.1" 200 411
+[INFO] 2025-01-28 23:49:14,097 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-28 23:49:14,610 basehttp "POST /game/player-state/ HTTP/1.1" 200 411
+[ERROR] 2025-01-28 23:49:15,130 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 23:49:15,131 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 133
+[INFO] 2025-01-28 23:49:15,648 basehttp "POST /game/player-state/ HTTP/1.1" 200 411
+[INFO] 2025-01-28 23:49:16,165 basehttp "POST /game/gather/food/ HTTP/1.1" 200 125
+[INFO] 2025-01-28 23:49:16,681 basehttp "POST /game/player-state/ HTTP/1.1" 200 411
+[INFO] 2025-01-28 23:52:06,901 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:52:11,701 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 23:52:11,702 views_auth Request method: POST
+[INFO] 2025-01-28 23:52:11,702 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 23:52:11,702 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738108331&hash=1c953e01ab2e78f6ff75198184f89fd0e52b5fd040d9fd72d4f0d659cb9c49d5'}
+[INFO] 2025-01-28 23:52:11,735 basehttp "POST /game/auth/ HTTP/1.1" 200 789
+[INFO] 2025-01-28 23:52:11,742 basehttp "POST /game/player-state/ HTTP/1.1" 200 407
+[INFO] 2025-01-28 23:52:12,301 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 76
+[INFO] 2025-01-28 23:52:12,818 basehttp "POST /game/player-state/ HTTP/1.1" 200 410
+[INFO] 2025-01-28 23:52:13,365 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-28 23:52:13,882 basehttp "POST /game/player-state/ HTTP/1.1" 200 410
+[ERROR] 2025-01-28 23:52:14,401 log Internal Server Error: /game/altar/activate/
+[ERROR] 2025-01-28 23:52:14,403 basehttp "POST /game/altar/activate/ HTTP/1.1" 500 133
+[INFO] 2025-01-28 23:52:14,921 basehttp "POST /game/player-state/ HTTP/1.1" 200 410
+[INFO] 2025-01-28 23:52:15,479 basehttp "POST /game/gather/food/ HTTP/1.1" 200 70
+[INFO] 2025-01-28 23:52:15,984 basehttp "POST /game/player-state/ HTTP/1.1" 200 414
+[INFO] 2025-01-28 23:53:19,855 autoreload /home/roman/pycharm_projects/game_backend/game/services.py changed, reloading.
+[INFO] 2025-01-28 23:53:20,218 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:53:24,906 views_auth === Starting auth_view ===
+[INFO] 2025-01-28 23:53:24,907 views_auth Request method: POST
+[INFO] 2025-01-28 23:53:24,907 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-28 23:53:24,907 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738108404&hash=8eeae9963430666eb302ca83b9960db65b75a2c67956c8bb94405853517dea23'}
+[INFO] 2025-01-28 23:53:24,952 basehttp "POST /game/auth/ HTTP/1.1" 200 790
+[INFO] 2025-01-28 23:53:24,974 basehttp "POST /game/player-state/ HTTP/1.1" 200 414
+[INFO] 2025-01-28 23:53:25,493 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 132
+[INFO] 2025-01-28 23:53:26,011 basehttp "POST /game/player-state/ HTTP/1.1" 200 414
+[INFO] 2025-01-28 23:53:26,580 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-28 23:53:27,097 basehttp "POST /game/player-state/ HTTP/1.1" 200 414
+[INFO] 2025-01-28 23:53:27,651 basehttp "POST /game/altar/activate/ HTTP/1.1" 200 92
+[INFO] 2025-01-28 23:53:28,162 basehttp "POST /game/player-state/ HTTP/1.1" 200 418
+[INFO] 2025-01-28 23:53:28,677 basehttp "POST /game/gather/food/ HTTP/1.1" 200 126
+[INFO] 2025-01-28 23:53:29,183 basehttp "POST /game/player-state/ HTTP/1.1" 200 418
+[WARNING] 2025-01-28 23:55:19,627 log Not Found: /
+[WARNING] 2025-01-28 23:55:19,628 basehttp "GET / HTTP/1.1" 404 2311
+[WARNING] 2025-01-28 23:55:25,792 log Not Found: /favicon.ico
+[WARNING] 2025-01-28 23:55:25,792 basehttp "GET /favicon.ico HTTP/1.1" 404 2362
+[INFO] 2025-01-28 23:55:34,063 basehttp "GET /admin HTTP/1.1" 301 0
+[INFO] 2025-01-28 23:55:34,081 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2025-01-28 23:55:34,167 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3198
+[INFO] 2025-01-28 23:55:34,258 basehttp "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+[INFO] 2025-01-28 23:55:34,259 basehttp "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+[INFO] 2025-01-28 23:55:34,260 basehttp "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+[INFO] 2025-01-28 23:55:34,261 basehttp "GET /static/vendor/bootswatch/cosmo/bootstrap.min.css HTTP/1.1" 200 154456
+[INFO] 2025-01-28 23:55:34,264 basehttp "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+[INFO] 2025-01-28 23:55:34,281 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[INFO] 2025-01-28 23:55:34,299 basehttp "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+[INFO] 2025-01-28 23:55:34,300 basehttp "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+[INFO] 2025-01-28 23:55:34,416 basehttp "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+[ERROR] 2025-01-28 23:55:38,631 log Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2123, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'admin'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 444, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/generic/edit.py", line 150, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/forms/forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/forms/forms.py", line 192, in errors
+    self.full_clean()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/forms/forms.py", line 326, in full_clean
+    self._clean_form()
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/forms/forms.py", line 342, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 356, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1555, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1385, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 369, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roman/pycharm_projects/game_backend/.venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2125, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'telegram_id' expected a number but got 'admin'.
+[ERROR] 2025-01-28 23:55:38,636 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 500 256232
+[INFO] 2025-01-28 23:58:22,409 autoreload /home/roman/pycharm_projects/game_backend/game/models.py changed, reloading.
+[INFO] 2025-01-28 23:58:22,792 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:58:58,877 autoreload /home/roman/pycharm_projects/game_backend/game/services.py changed, reloading.
+[INFO] 2025-01-28 23:58:59,273 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-28 23:59:09,755 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3195
+[INFO] 2025-01-28 23:59:09,794 basehttp "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:09,798 basehttp "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:09,799 basehttp "GET /static/vendor/bootswatch/cosmo/bootstrap.min.css HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:09,802 basehttp "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:09,804 basehttp "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:09,848 basehttp "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:09,849 basehttp "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:09,908 basehttp "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+[INFO] 2025-01-28 23:59:19,924 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3518
+[INFO] 2025-01-28 23:59:40,741 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3518
+[INFO] 2025-01-28 23:59:46,611 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3518
+[INFO] 2025-01-28 23:59:54,396 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3518
+[INFO] 2025-01-29 00:00:05,977 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[INFO] 2025-01-29 00:00:06,042 basehttp "GET /admin/ HTTP/1.1" 200 33371
+[INFO] 2025-01-29 00:00:06,090 basehttp "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+[INFO] 2025-01-29 00:00:06,113 basehttp "GET /static/jazzmin/js/ui-builder.js HTTP/1.1" 200 13873
+[INFO] 2025-01-29 00:00:06,169 basehttp "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+[INFO] 2025-01-29 00:00:11,446 basehttp "GET /admin/admin_interface/theme/ HTTP/1.1" 200 31027
+[INFO] 2025-01-29 00:00:11,516 basehttp "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+[INFO] 2025-01-29 00:00:11,556 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+[INFO] 2025-01-29 00:00:11,556 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[INFO] 2025-01-29 00:00:11,557 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[INFO] 2025-01-29 00:00:11,557 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[INFO] 2025-01-29 00:00:11,560 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+[INFO] 2025-01-29 00:00:11,563 basehttp "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+[INFO] 2025-01-29 00:00:11,566 basehttp "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+[INFO] 2025-01-29 00:00:11,571 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:00:11,571 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[INFO] 2025-01-29 00:00:11,590 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[INFO] 2025-01-29 00:00:16,573 basehttp "GET /admin/admin_interface/ HTTP/1.1" 200 28978
+[INFO] 2025-01-29 00:00:22,203 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 30181
+[INFO] 2025-01-29 00:00:22,254 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:00:24,126 basehttp "GET /admin/game/playerstate/ HTTP/1.1" 200 36076
+[INFO] 2025-01-29 00:00:24,194 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:00:29,331 basehttp "GET /admin/game/user/ HTTP/1.1" 200 38655
+[INFO] 2025-01-29 00:00:29,387 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:00:29,416 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[INFO] 2025-01-29 00:00:38,319 basehttp "GET /admin/game/user/1/change/ HTTP/1.1" 200 50524
+[INFO] 2025-01-29 00:00:38,387 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[INFO] 2025-01-29 00:00:38,388 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[INFO] 2025-01-29 00:00:38,389 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[INFO] 2025-01-29 00:00:38,391 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:00:38,400 basehttp "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 200 2756
+[INFO] 2025-01-29 00:00:38,400 basehttp "GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+[INFO] 2025-01-29 00:00:38,407 basehttp "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 200 6258
+[INFO] 2025-01-29 00:01:11,757 basehttp "GET /admin/game/user/2/change/ HTTP/1.1" 200 50096
+[INFO] 2025-01-29 00:01:11,832 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:01:13,553 basehttp "GET /admin/ HTTP/1.1" 200 33371
+[INFO] 2025-01-29 00:03:28,164 autoreload /home/roman/pycharm_projects/game_backend/game/admin.py changed, reloading.
+[INFO] 2025-01-29 00:03:29,023 autoreload Watching for file changes with StatReloader
+[INFO] 2025-01-29 00:03:34,144 basehttp "GET /admin/ HTTP/1.1" 200 33371
+[INFO] 2025-01-29 00:03:34,175 basehttp "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,178 basehttp "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,181 basehttp "GET /static/vendor/bootswatch/cosmo/bootstrap.min.css HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,183 basehttp "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,184 basehttp "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,222 basehttp "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,222 basehttp "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,226 basehttp "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,227 basehttp "GET /static/jazzmin/js/ui-builder.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,314 basehttp "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:34,314 basehttp "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:39,227 basehttp "GET /admin/game/playerstate/ HTTP/1.1" 200 39348
+[INFO] 2025-01-29 00:03:39,303 basehttp "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:39,307 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:03:39,383 basehttp "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:39,383 basehttp "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:03:45,680 basehttp "GET /admin/game/user/ HTTP/1.1" 200 38655
+[INFO] 2025-01-29 00:03:45,725 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:03:47,589 basehttp "GET /admin/game/user/1/change/ HTTP/1.1" 200 47130
+[INFO] 2025-01-29 00:03:47,653 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:03:55,210 basehttp "GET /admin/game/user/ HTTP/1.1" 200 38655
+[INFO] 2025-01-29 00:03:55,289 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:03:59,129 basehttp "GET /admin/game/playerstate/ HTTP/1.1" 200 39348
+[INFO] 2025-01-29 00:03:59,175 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:04:01,009 basehttp "GET /admin/game/playerstate/1/change/ HTTP/1.1" 200 45454
+[INFO] 2025-01-29 00:04:01,086 basehttp "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:04:01,087 basehttp "GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:04:01,090 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[INFO] 2025-01-29 00:04:01,095 basehttp "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 304 0
+[INFO] 2025-01-29 00:04:01,099 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[INFO] 2025-01-29 00:04:01,114 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+[INFO] 2025-01-29 00:04:15,803 basehttp "GET /admin/ HTTP/1.1" 200 33371
+[INFO] 2025-01-29 00:04:27,997 basehttp "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 200 164202
+[INFO] 2025-01-29 00:04:34,326 basehttp "GET /static/vendor/bootswatch/cyborg/bootstrap.min.css HTTP/1.1" 200 164597
+[INFO] 2025-01-29 00:04:36,879 basehttp "GET /static/vendor/bootswatch/slate/bootstrap.min.css HTTP/1.1" 200 171632
+[INFO] 2025-01-29 00:04:40,219 basehttp "GET /static/vendor/bootswatch/solar/bootstrap.min.css HTTP/1.1" 200 169219
+[INFO] 2025-01-29 00:04:43,625 basehttp "GET /static/vendor/bootswatch/superhero/bootstrap.min.css HTTP/1.1" 200 164559
+[INFO] 2025-01-29 00:19:50,795 views_auth === Starting auth_view ===
+[INFO] 2025-01-29 00:19:50,795 views_auth Request method: POST
+[INFO] 2025-01-29 00:19:50,795 views_auth Request headers: {'Content-Length': '511', 'Content-Type': 'application/json', 'Host': 'localhost:8000', 'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}
+[INFO] 2025-01-29 00:19:50,795 views_auth Request data: {'initData': 'user=%7B%22id%22%3A+942725235%2C+%22first_name%22%3A+%22PyTorch%22%2C+%22last_name%22%3A+%22Love%22%2C+%22username%22%3A+%22mavainc%22%2C+%22language_code%22%3A+%22ru%22%2C+%22is_premium%22%3A+true%2C+%22allows_write_to_pm%22%3A+true%2C+%22photo_url%22%3A+%22https%3A%2F%2Ft.me%2Fi%2Fuserpic%2F320%2FifVkHuoqKoec-tLyWu6fzwrej69yXrTXBDRfXjKGZW0.svg%22%7D&chat_instance=5919886264079046979&chat_type=sender&auth_date=1738109990&hash=e0d727a5b56fb81ba37c5d29638e5281b337f20fd09427cf72b0aca0bb5db0fd'}
+[INFO] 2025-01-29 00:19:50,832 basehttp "POST /game/auth/ HTTP/1.1" 200 790
+[INFO] 2025-01-29 00:19:50,843 basehttp "POST /game/player-state/ HTTP/1.1" 200 411
+[INFO] 2025-01-29 00:19:51,395 basehttp "POST /game/gather/wood/ HTTP/1.1" 200 76
+[INFO] 2025-01-29 00:19:51,913 basehttp "POST /game/player-state/ HTTP/1.1" 200 414
+[INFO] 2025-01-29 00:19:52,491 basehttp "POST /game/campfire/start/ HTTP/1.1" 200 73
+[INFO] 2025-01-29 00:19:53,006 basehttp "POST /game/player-state/ HTTP/1.1" 200 414
+[INFO] 2025-01-29 00:19:53,526 basehttp "POST /game/altar/activate/ HTTP/1.1" 200 155
+[INFO] 2025-01-29 00:19:54,043 basehttp "POST /game/player-state/ HTTP/1.1" 200 414
+[INFO] 2025-01-29 00:19:54,591 basehttp "POST /game/gather/food/ HTTP/1.1" 200 70
+[INFO] 2025-01-29 00:19:55,096 basehttp "POST /game/player-state/ HTTP/1.1" 200 417

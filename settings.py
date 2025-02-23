@@ -49,3 +49,17 @@ LOGGING = {
 
 # Временно включите отладку для просмотра ошибок
 DEBUG = True
+
+INSTALLED_APPS = [
+    ...
+    'corsheaders',
+    ...
+]
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Добавьте в начало списка
+    ...
+]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Только для разработки!
+ALLOWED_HOSTS = ['185.251.89.194', 'localhost', '127.0.0.1']

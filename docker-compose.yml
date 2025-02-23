@@ -12,7 +12,7 @@ services:
       - SECRET_KEY=7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
       - BOT_TOKEN=7245460981:AAF5MOwfMuJLB71LtMeXpTTnyLUN03j-CHI
       - DEBUG=0
-      - ALLOWED_HOSTS=ваш_реальный_домен.com,localhost,127.0.0.1
+      - ALLOWED_HOSTS=185.251.89.194,localhost,127.0.0.1
     depends_on:
       - db
     volumes:
@@ -34,7 +34,6 @@ services:
     restart: always
     ports:
       - "80:80"
-      - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - static_volume:/app/static
